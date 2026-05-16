@@ -144,21 +144,47 @@
       <div class="constants-grid" id="constants-grid"></div>
     </section>
 
-    
-<!-- === POST 1 TRIAL POST == -->
-    
-    <div class="post-card">
-  <h2>My First Post</h2>
-  
-  <p>
-    Short description of the post.
-  </p>
 
-  <a href="posts/post1.html">
-    Open Post
-  </a>
-    </div>
+<!-- ==== 04. PDF ==== -->
+   <section class="section reveal" id="section-pdf">
+      <div class="section-head">
+        <div class="section-num" id="pdf-section-num">03</div>
+        <h2 class="section-title">Document Analysis</h2>
+        <div class="section-rule"></div>
+      </div>
 
+      <div id="upload-zone" class="upload-zone">
+        <div class="upload-ring">
+          <span class="upload-arrow">↑</span>
+        </div>
+        <div class="upload-copy">
+          <p class="upload-title">Upload PDF Document</p>
+          <p class="upload-hint">Drop your paper here, or click to browse</p>
+          <p class="upload-meta">Mathematical &amp; physics papers · LaTeX rendered automatically</p>
+        </div>
+        <input type="file" id="pdf-file-input" accept=".pdf" hidden />
+      </div>
+
+      <div id="pdf-result" class="pdf-result" style="display:none;">
+        <div class="pdf-result-header">
+          <div class="pdf-result-name" id="pdf-result-name">Document.pdf</div>
+          <div class="pdf-result-meta" id="pdf-result-meta"></div>
+          <button class="btn-ghost small" id="pdf-reset">✕ Close</button>
+        </div>
+        <div class="pdf-tabs">
+          <button class="pdf-tab active" data-tab="pages">Pages</button>
+          <button class="pdf-tab" data-tab="text">Extracted Text</button>
+        </div>
+        <div class="pdf-tab-content" id="pdf-tab-pages">
+          <div class="pdf-pages-wrap" id="pdf-pages-wrap"></div>
+        </div>
+        <div class="pdf-tab-content" id="pdf-tab-text" style="display:none;">
+          <div class="pdf-text-content" id="pdf-text-content"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
     
   <!-- ═══ FOOTER ═══ -->
   <footer id="footer">
