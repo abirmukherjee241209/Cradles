@@ -1025,3 +1025,54 @@ mjx-container svg {
   .mode-symbol { font-size: 1.1rem; }
   .nav-rule { display: none; }
 }
+/* ═══════════════════════════════════
+   POSTS
+═══════════════════════════════════ */
+
+.posts-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.post-card {
+  display: block;
+  padding: 2rem;
+
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+
+  text-decoration: none;
+  color: inherit;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.04);
+}
+
+.post-title {
+  margin: 0.6rem 0 1rem;
+
+  font-size: 1.7rem;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+}
+
+.post-desc {
+  opacity: 0.75;
+  line-height: 1.8;
+}
+
+.post-date {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.45;
+}
