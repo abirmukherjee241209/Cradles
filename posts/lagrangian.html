@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lagrangian Handout — Ashmit Dutta</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+  />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --text: #e6edf3;
+      --muted: #9da7b3;
+      --accent: #58a6ff;
+      --border: #30363d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, sans-serif;
+      line-height: 1.75;
+    }
+
+    .container {
+      width: min(900px, 92%);
+      margin: 0 auto;
+      padding: 80px 0;
+    }
+
+    .hero {
+      margin-bottom: 60px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(88, 166, 255, 0.12);
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      border: 1px solid rgba(88, 166, 255, 0.2);
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.1;
+      margin: 0 0 20px;
+      letter-spacing: -0.03em;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    section {
+      margin-bottom: 70px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+      border-left: 4px solid var(--accent);
+      padding-left: 16px;
+    }
+
+    h3 {
+      margin-top: 40px;
+      font-size: 1.35rem;
+      color: var(--accent);
+    }
+
+    p {
+      margin: 16px 0;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 25px 0;
+    }
+
+    .equation {
+      overflow-x: auto;
+      padding: 14px 0;
+    }
+
+    ul {
+      padding-left: 24px;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    .quote {
+      border-left: 4px solid var(--accent);
+      padding-left: 18px;
+      color: var(--muted);
+      margin: 24px 0;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 700px) {
+      .card {
+        padding: 22px;
+      }
+
+      h2 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="hero">
+      <div class="tag">Physics • Classical Mechanics</div>
+
+      <h1>Lagrangian Handout</h1>
+
+      <div class="meta">
+        By Ashmit Dutta • September 2, 2020
+      </div>
+    </div>
+
+    <section>
+      <h2>Introduction</h2>
+
+      <p>
+        This handout is a practical introduction to Lagrangian mechanics,
+        especially aimed at olympiad-style physics problem solving.
+        Rather than focusing on complete mathematical rigor,
+        the emphasis is on developing intuition and computational skill.
+      </p>
+
+      <div class="card">
+        <h3>Recommended References</h3>
+
+        <ul>
+          <li><em>Introduction to Classical Mechanics</em> — David J. Morin</li>
+          <li><em>Classical Mechanics</em> — Herbert Goldstein</li>
+          <li>David Tong’s Notes on Lagrangian Formalism</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Basic Definitions</h2>
+
+      <div class="card">
+        <h3>Lagrangian</h3>
+
+        <p>
+          The Lagrangian of a system is defined by:
+        </p>
+
+        <div class="equation">
+          \[
+            L = T - V
+          \]
+        </div>
+
+        <p>
+          where \(T\) is the kinetic energy and \(V\) is the potential energy.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Generalized Coordinates</h3>
+
+        <p>
+          A generalized coordinate describes the configuration of an entire system.
+          Examples include translational coordinates like \(x\)
+          and angular coordinates like \(\theta\).
+        </p>
+
+        <div class="equation">
+          \[
+            q =
+            \begin{pmatrix}
+            q_1 \\
+            q_2 \\
+            \vdots \\
+            q_n
+            \end{pmatrix}
+          \]
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Action</h3>
+
+        <p>
+          The action of a system along a path \(q(t)\) is:
+        </p>
+
+        <div class="equation">
+          \[
+            S = \int_{t_1}^{t_2} L(q_i,\dot q_i,t)\,dt
+          \]
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Euler–Lagrange Equation</h2>
+
+      <p>
+        The Euler–Lagrange equation is the fundamental equation of motion
+        in Lagrangian mechanics.
+      </p>
+
+      <div class="card">
+        <div class="equation">
+          \[
+            \frac{d}{dt}
+            \left(
+            \frac{\partial L}{\partial \dot q}
+            \right)
+            =
+            \frac{\partial L}{\partial q}
+          \]
+        </div>
+      </div>
+
+      <div class="quote">
+        Unlike Newtonian mechanics, the Euler–Lagrange equations
+        remain valid in arbitrary coordinate systems and frames.
+      </div>
+    </section>
+
+    <section>
+      <h2>Coupled Oscillators</h2>
+
+      <p>
+        Systems with multiple degrees of freedom often produce
+        coupled differential equations.
+      </p>
+
+      <div class="card">
+        <div class="equation">
+          \[
+            M\ddot X = -KX
+          \]
+        </div>
+
+        <p>
+          The eigenfrequencies satisfy:
+        </p>
+
+        <div class="equation">
+          \[
+            \det(M^{-1}K - \omega^2 I) = 0
+          \]
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Worked Example</h2>
+
+      <h3>Oscillating Cylinder Inside a Hollow Cylinder</h3>
+
+      <p>
+        A solid cylinder of mass \(m\) and radius \(r\)
+        oscillates inside a hollow cylinder of radius \(R\).
+      </p>
+
+      <div class="card">
+        <p>
+          Using the rolling constraint:
+        </p>
+
+        <div class="equation">
+          \[
+            (R-r)\theta = r\phi
+          \]
+        </div>
+
+        <p>
+          The Lagrangian becomes:
+        </p>
+
+        <div class="equation">
+          \[
+            L =
+            \frac{3}{4}m(R-r)^2\dot\theta^2
+            +
+            mg(R-r)\cos\theta
+          \]
+        </div>
+
+        <p>
+          Applying the Euler–Lagrange equation and using
+          the small angle approximation gives:
+        </p>
+
+        <div class="equation">
+          \[
+            \omega =
+            \sqrt{
+            \frac{2g}{3(R-r)}
+            }
+          \]
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>When to Use Lagrangian Mechanics</h2>
+
+      <div class="card">
+        <ul>
+          <li>Systems with many constraints</li>
+          <li>Multiple degrees of freedom</li>
+          <li>Problems involving generalized coordinates</li>
+          <li>Oscillations and coupled systems</li>
+          <li>Situations where Newtonian force analysis becomes messy</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected Problems</h2>
+
+      <div class="card">
+        <ol>
+          <li>Oscillation of a U-tube manometer</li>
+          <li>Dynamics of a rope over a pulley</li>
+          <li>Acceleration of wedges with constraints</li>
+          <li>Coupled oscillator systems</li>
+          <li>Eigenfrequencies in LC circuits</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h2>Hamilton’s Principle</h2>
+
+      <p>
+        Hamilton’s Principle states that the physical path taken by a system
+        is the one for which the action is stationary.
+      </p>
+
+      <div class="card">
+        <div class="equation">
+          \[
+            \delta S = 0
+          \]
+        </div>
+
+        <p>
+          This principle unifies mechanics into a variational framework
+          and forms the foundation of modern theoretical physics.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      Adapted from the original handout by Ashmit Dutta.
+      Styled for web publication.
+    </footer>
+
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$", right: "$", display: false },
+          { left: "\\(", right: "\\)", display: false }
+        ]
+      });
+    });
+  </script>
+</body>
+</html>
