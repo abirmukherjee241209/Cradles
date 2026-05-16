@@ -693,6 +693,21 @@ function setupScrollReveal() {
 
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 }
+const posts = [
+  {
+    title: "On Fourier Analysis",
+    date: "May 2026",
+    desc: "A short exploration of Fourier transforms and symmetry.",
+    link: "posts/fourier.html"
+  },
+
+  {
+    title: "Quantum Fields & Geometry",
+    date: "April 2026",
+    desc: "Thoughts on gauge theory and spacetime structure.",
+    link: "posts/qft.html"
+  }
+];
 
 // ─── Init ────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
