@@ -708,6 +708,22 @@ const posts = [
     link: "posts/qft.html"
   }
 ];
+const postsGrid = document.getElementById("posts-grid");
+
+posts.forEach(post => {
+  const card = document.createElement("a");
+
+  card.className = "post-card";
+  card.href = post.link;
+
+  card.innerHTML = `
+    <div class="post-date">${post.date}</div>
+    <h3 class="post-title">${post.title}</h3>
+    <p class="post-desc">${post.desc}</p>
+  `;
+
+  postsGrid.appendChild(card);
+});
 
 // ─── Init ────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
