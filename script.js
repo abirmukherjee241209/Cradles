@@ -702,10 +702,10 @@ const posts = [
   },
 
   {
-    title: "Quantum Fields & Geometry",
+    title: "A Brief Introduction to Lagrangian Mechanics",
     date: "April 2026",
-    desc: "Thoughts on gauge theory and spacetime structure.",
-    link: "posts/qft.html"
+    desc: "Thoughts on a new way of describing dyanmics.",
+    link: "posts/lagrangian.html"
   }
 ];
 const postsGrid = document.getElementById("posts-grid");
