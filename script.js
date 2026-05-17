@@ -61,30 +61,30 @@ const MATH_FORMULAS = [
   { cat:'trig',     name:"Euler's Formula",                 latex:'$$e^{i\\theta}=\\cos\\theta+i\\sin\\theta$$',                                                      desc:'Unifies exponentials, trigonometry, and complex numbers.' },
   { cat:'trig',     name:'Pythagorean Identity',            latex:'$$\\sin^2\\theta+\\cos^2\\theta=1$$',                                                              desc:'The fundamental trigonometric identity.' },
   { cat:'trig',     name:'Angle Addition',                  latex:'$$\\cos(\\alpha+\\beta)=\\cos\\alpha\\cos\\beta-\\sin\\alpha\\sin\\beta$$',                         desc:'Expresses cosine of a sum in terms of individual angles.' },
-  { cat:'linalg',   name:'Eigenvalue Equation',             latex:'$$A\\mathbf{v}=\\lambda\\mathbf{v}$$',                                                             desc:'A vector scaled by $A$ is equivalent to scalar multiplication by $\\lambda$.' },
+  { cat:'linalg',   name:'Eigenvalue Equation',             latex:'$$A\\mathbf{v}=\\lambda\\mathbf{v}$$',                                                             desc:'A vector scaled by $A$ equals scalar multiplication by $\\lambda$.' },
   { cat:'linalg',   name:'Cauchy–Schwarz Inequality',       latex:'$$|\\langle\\mathbf{u},\\mathbf{v}\\rangle|^2\\leq\\langle\\mathbf{u},\\mathbf{u}\\rangle\\cdot\\langle\\mathbf{v},\\mathbf{v}\\rangle$$', desc:'Fundamental inequality in inner product spaces.' },
   { cat:'analysis', name:'Fourier Transform',               latex:'$$\\hat{f}(\\xi)=\\int_{-\\infty}^{\\infty}f(x)\\,e^{-2\\pi ix\\xi}\\,dx$$',                     desc:'Decomposes a function into its constituent frequencies.' },
   { cat:'analysis', name:"Cauchy's Integral Formula",       latex:'$$f(a)=\\frac{1}{2\\pi i}\\oint_{\\gamma}\\frac{f(z)}{z-a}\\,dz$$',                               desc:'Values inside a contour are determined by boundary values.' },
   { cat:'analysis', name:"Stokes' Theorem",                 latex:'$$\\iint_S(\\nabla\\times\\mathbf{F})\\cdot d\\mathbf{S}=\\oint_{\\partial S}\\mathbf{F}\\cdot d\\mathbf{r}$$', desc:'Relates a surface curl integral to its boundary line integral.' },
 ];
 const PHYSICS_FORMULAS = [
-  { cat:'classical',  name:"Newton's Second Law",         latex:'$$\\mathbf{F}=m\\mathbf{a}=\\frac{d\\mathbf{p}}{dt}$$',                                           desc:'Net force equals rate of change of momentum.' },
-  { cat:'classical',  name:'Work–Energy Theorem',         latex:'$$W=\\Delta KE=\\tfrac{1}{2}mv_f^2-\\tfrac{1}{2}mv_i^2$$',                                        desc:'Net work done equals the change in kinetic energy.' },
-  { cat:'classical',  name:'Angular Momentum',            latex:'$$\\mathbf{L}=\\mathbf{r}\\times\\mathbf{p}=I\\boldsymbol{\\omega}$$',                            desc:'Conserved quantity for isolated rotational systems.' },
-  { cat:'classical',  name:'Gravitational Force',         latex:'$$F=G\\frac{m_1 m_2}{r^2}$$',                                                                     desc:"Newton's universal law of gravitation." },
-  { cat:'em',         name:"Coulomb's Law",               latex:'$$\\mathbf{F}=k_e\\frac{q_1 q_2}{r^2}\\hat{r}$$',                                                desc:'Electrostatic force between two point charges.' },
+  { cat:'classical',  name:"Newton's Second Law",         latex:'$$\\mathbf{F}=m\\mathbf{a}=\\frac{d\\mathbf{p}}{dt}$$',                                                                                   desc:'Net force equals rate of change of momentum.' },
+  { cat:'classical',  name:'Work–Energy Theorem',         latex:'$$W=\\Delta KE=\\tfrac{1}{2}mv_f^2-\\tfrac{1}{2}mv_i^2$$',                                                                               desc:'Net work done equals the change in kinetic energy.' },
+  { cat:'classical',  name:'Angular Momentum',            latex:'$$\\mathbf{L}=\\mathbf{r}\\times\\mathbf{p}=I\\boldsymbol{\\omega}$$',                                                                   desc:'Conserved quantity for isolated rotational systems.' },
+  { cat:'classical',  name:'Gravitational Force',         latex:'$$F=G\\frac{m_1 m_2}{r^2}$$',                                                                                                            desc:"Newton's universal law of gravitation." },
+  { cat:'em',         name:"Coulomb's Law",               latex:'$$\\mathbf{F}=k_e\\frac{q_1 q_2}{r^2}\\hat{r}$$',                                                                                       desc:'Electrostatic force between two point charges.' },
   { cat:'em',         name:"Maxwell's Equations",         latex:'$$\\nabla\\cdot\\mathbf{E}=\\frac{\\rho}{\\varepsilon_0},\\quad\\nabla\\times\\mathbf{B}=\\mu_0\\mathbf{J}+\\mu_0\\varepsilon_0\\frac{\\partial\\mathbf{E}}{\\partial t}$$', desc:'The four pillars of classical electromagnetism.' },
-  { cat:'em',         name:'Lorentz Force',               latex:'$$\\mathbf{F}=q(\\mathbf{E}+\\mathbf{v}\\times\\mathbf{B})$$',                                    desc:'Force on a charged particle in EM fields.' },
-  { cat:'thermo',     name:'First Law of Thermodynamics', latex:'$$\\Delta U=Q-W$$',                                                                               desc:'Internal energy rises with heat and falls with work done.' },
-  { cat:'thermo',     name:'Boltzmann Entropy',           latex:'$$S=k_B\\ln\\Omega$$',                                                                            desc:'Entropy as the logarithm of accessible microstates.' },
-  { cat:'thermo',     name:'Ideal Gas Law',               latex:'$$PV=nRT=Nk_BT$$',                                                                               desc:'Relates pressure, volume, and temperature of an ideal gas.' },
-  { cat:'quantum',    name:"Schrödinger Equation",        latex:'$$i\\hbar\\frac{\\partial}{\\partial t}|\\psi\\rangle=\\hat{H}|\\psi\\rangle$$',                  desc:'Governs the time evolution of quantum states.' },
-  { cat:'quantum',    name:'Heisenberg Uncertainty',      latex:'$$\\sigma_x\\,\\sigma_p\\geq\\frac{\\hbar}{2}$$',                                                 desc:'Position and momentum cannot both be precisely known.' },
-  { cat:'quantum',    name:'de Broglie Relation',         latex:'$$\\lambda=\\frac{h}{p}=\\frac{h}{mv}$$',                                                         desc:'Every particle has an associated matter wavelength.' },
-  { cat:'relativity', name:'Mass–Energy Equivalence',     latex:'$$E=mc^2$$',                                                                                      desc:"Einstein's iconic relation: mass and energy interconvert." },
-  { cat:'relativity', name:'Lorentz Factor',              latex:'$$\\gamma=\\frac{1}{\\sqrt{1-v^2/c^2}}$$',                                                        desc:'Factor governing time dilation and length contraction.' },
-  { cat:'relativity', name:'Spacetime Interval',          latex:'$$ds^2=-c^2\\,dt^2+dx^2+dy^2+dz^2$$',                                                            desc:'Invariant separation measure in four-dimensional spacetime.' },
-  { cat:'relativity', name:'Einstein Field Equations',    latex:'$$G_{\\mu\\nu}+\\Lambda g_{\\mu\\nu}=\\frac{8\\pi G}{c^4}T_{\\mu\\nu}$$',                        desc:'Curvature of spacetime determined by matter and energy.' },
+  { cat:'em',         name:'Lorentz Force',               latex:'$$\\mathbf{F}=q(\\mathbf{E}+\\mathbf{v}\\times\\mathbf{B})$$',                                                                           desc:'Force on a charged particle in EM fields.' },
+  { cat:'thermo',     name:'First Law of Thermodynamics', latex:'$$\\Delta U=Q-W$$',                                                                                                                      desc:'Internal energy rises with heat and falls with work done.' },
+  { cat:'thermo',     name:'Boltzmann Entropy',           latex:'$$S=k_B\\ln\\Omega$$',                                                                                                                   desc:'Entropy as the logarithm of accessible microstates.' },
+  { cat:'thermo',     name:'Ideal Gas Law',               latex:'$$PV=nRT=Nk_BT$$',                                                                                                                      desc:'Relates pressure, volume, and temperature of an ideal gas.' },
+  { cat:'quantum',    name:"Schrödinger Equation",        latex:'$$i\\hbar\\frac{\\partial}{\\partial t}|\\psi\\rangle=\\hat{H}|\\psi\\rangle$$',                                                         desc:'Governs the time evolution of quantum states.' },
+  { cat:'quantum',    name:'Heisenberg Uncertainty',      latex:'$$\\sigma_x\\,\\sigma_p\\geq\\frac{\\hbar}{2}$$',                                                                                        desc:'Position and momentum cannot both be precisely known.' },
+  { cat:'quantum',    name:'de Broglie Relation',         latex:'$$\\lambda=\\frac{h}{p}=\\frac{h}{mv}$$',                                                                                               desc:'Every particle has an associated matter wavelength.' },
+  { cat:'relativity', name:'Mass–Energy Equivalence',     latex:'$$E=mc^2$$',                                                                                                                            desc:"Einstein's iconic relation: mass and energy interconvert." },
+  { cat:'relativity', name:'Lorentz Factor',              latex:'$$\\gamma=\\frac{1}{\\sqrt{1-v^2/c^2}}$$',                                                                                              desc:'Factor governing time dilation and length contraction.' },
+  { cat:'relativity', name:'Spacetime Interval',          latex:'$$ds^2=-c^2\\,dt^2+dx^2+dy^2+dz^2$$',                                                                                                  desc:'Invariant separation measure in four-dimensional spacetime.' },
+  { cat:'relativity', name:'Einstein Field Equations',    latex:'$$G_{\\mu\\nu}+\\Lambda g_{\\mu\\nu}=\\frac{8\\pi G}{c^4}T_{\\mu\\nu}$$',                                                              desc:'Curvature of spacetime determined by matter and energy.' },
 ];
 const CONSTANTS = [
   { sym:'c',  name:'Speed of Light',        val:'2.998 × 10⁸',   unit:'m s⁻¹' },
@@ -100,29 +100,6 @@ const CONSTANTS = [
   { sym:'R',  name:'Gas Constant',          val:'8.314',          unit:'J mol⁻¹ K⁻¹' },
   { sym:'σ',  name:'Stefan–Boltzmann',      val:'5.670 × 10⁻⁸',  unit:'W m⁻² K⁻⁴' },
 ];
-
-// ══════════════════════════════════════════════
-// POST LOADING
-// posts.js defines window.POST_MANIFEST and window.registerPost.
-// We load each file in the manifest dynamically, then render.
-// ══════════════════════════════════════════════
-
-function loadScript(src) {
-  return new Promise((resolve) => {
-    const s = document.createElement('script');
-    s.src = src;
-    s.onload  = resolve;
-    s.onerror = () => { console.warn(`CRADLES: could not load "${src}"`); resolve(); };
-    document.head.appendChild(s);
-  });
-}
-
-async function loadAllPosts() {
-  const manifest = window.POST_MANIFEST || [];
-  for (const src of manifest) {
-    await loadScript(src);
-  }
-}
 
 // ══════════════════════════════════════════════
 // LOADER
@@ -160,14 +137,11 @@ function initCanvas() {
     const { r, g, b } = canvasCurrent;
 
     ctx.clearRect(0, 0, W, H);
-
-    // Grid
     ctx.strokeStyle = `rgba(${r},${g},${b},0.025)`;
     ctx.lineWidth = .5;
     for (let x = 0; x < W; x += 88) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
     for (let y = 0; y < H; y += 88) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
 
-    // Particles + connections
     for (let i = 0; i < pts.length; i++) {
       const p = pts[i];
       p.x = (p.x + p.vx + W) % W;
@@ -198,7 +172,7 @@ function buildFloatSyms(mode) {
   const wrap = document.getElementById('float-wrap');
   wrap.innerHTML = '';
   FLOAT[mode].forEach((sym, i) => {
-    const el  = document.createElement('span');
+    const el = document.createElement('span');
     el.className = 'float-sym';
     el.textContent = sym;
     el.style.cssText = [
@@ -261,7 +235,10 @@ function applyMode(mode) {
 }
 
 // ══════════════════════════════════════════════
-// POSTS — read from window.CradlesRegistry
+// POSTS
+// By the time script.js runs, posts.js has already injected
+// all post files synchronously, so CradlesRegistry is fully
+// populated — no async loading required here.
 // ══════════════════════════════════════════════
 function renderPosts() {
   const all   = (window.CradlesRegistry || []).filter(p => p.mode === state.mode);
@@ -272,15 +249,16 @@ function renderPosts() {
   if (!all.length) { empty.style.display = ''; return; }
   empty.style.display = 'none';
 
-  // Reverse so last-listed post appears first (newest-first feel)
+  // Reverse so last-listed post in manifest appears first
   [...all].reverse().forEach((post, i) => {
     const card = document.createElement('article');
     card.className = 'post-card';
     card.style.animationDelay = `${i * .07}s`;
 
-    // Split body on blank lines → paragraphs
-    const paragraphs = post.body.trim().split(/\n{2,}/)
-      .map(p => `<p>${p.trim().replace(/\n/g,' ')}</p>`).join('');
+    const paragraphs = post.body.trim()
+      .split(/\n{2,}/)
+      .map(p => `<p>${p.trim().replace(/\n/g, ' ')}</p>`)
+      .join('');
 
     card.innerHTML = `
       <div class="post-meta">
@@ -322,7 +300,6 @@ function buildCards(mode, filter) {
   const data = filter === 'all' ? src : src.filter(f => f.cat === filter);
   const grid = document.getElementById('formula-grid');
   grid.innerHTML = '';
-
   data.forEach((item, i) => {
     const card = document.createElement('div');
     card.className = 'formula-card';
@@ -340,7 +317,6 @@ function buildCards(mode, filter) {
     });
     grid.appendChild(card);
   });
-
   if (window.MathJax) MathJax.typesetPromise([grid]).catch(console.error);
 }
 
@@ -411,7 +387,9 @@ function loadIntoRenderer(latex) {
 // ══════════════════════════════════════════════
 function setupReveal() {
   const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
   }, { threshold: .07 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 }
@@ -419,7 +397,7 @@ function setupReveal() {
 // ══════════════════════════════════════════════
 // INIT
 // ══════════════════════════════════════════════
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
   initLoader();
   initCanvas();
   setupModeToggle();
@@ -429,14 +407,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   buildFilters('math');
   buildCards('math', 'all');
 
-  // Load post files from manifest, then render
-  await loadAllPosts();
+  // Posts are already registered synchronously by posts.js —
+  // just render straight away, no waiting needed.
   renderPosts();
 
-  // Re-typeset library once MathJax is ready
   if (window.MathJax) {
     MathJax.startup.promise.then(() => {
       buildCards(state.mode, state.filter);
+      renderPosts();
     }).catch(() => {});
   }
 });
