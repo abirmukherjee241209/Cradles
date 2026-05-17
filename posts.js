@@ -30,10 +30,11 @@ window.registerPost = function (post) {
 var POST_MANIFEST = [
 
   'posts/math-riemann.js',
-  'posts/physics-schrodinger-equation.js',
 
 ];
-
+window.POST_MANIFEST = [
+  'posts/math-riemann.js',   // ← just add this
+];
 /* ── Loader (do not edit) ────────────────────────────────────
    Injects each post file as a synchronous <script> tag during
    the page parse, so all posts are registered before script.js
