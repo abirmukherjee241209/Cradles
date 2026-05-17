@@ -180,6 +180,133 @@
   -->
   <script src="posts.js"></script>
 
+  <script src="posts/math-riemann.js"></script>
+  <script src="posts/physics-schrodinger-equation.js"></script>
+
+  <!-- ↑ ADD NEW POST SCRIPTS ABOVE THIS LINE -->
+  <script src="script.js"></script>
+</body>
+</html>
+    <div class="hero-bg-word" id="hero-bg-word" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow" id="hero-eyebrow">The Discipline of</p>
+      <h1 class="hero-title"  id="hero-title">Mathematics</h1>
+      <p class="hero-desc"    id="hero-desc">
+        Where precision meets elegance — explore the language of the universe.
+      </p>
+      <div class="hero-orn">
+        <span class="orn-line"></span>
+        <span class="orn-gem">◆</span>
+        <span class="orn-line r"></span>
+      </div>
+      <a href="#section-renderer" class="hero-cta">
+        Begin Exploring <span class="cta-dn">↓</span>
+      </a>
+    </div>
+    <div class="float-wrap" id="float-wrap" aria-hidden="true"></div>
+  </section>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- 01 · RENDERER -->
+    <section class="section reveal" id="section-renderer">
+      <div class="sec-head">
+        <span class="sec-num">01</span>
+        <h2 class="sec-title">Formula Renderer</h2>
+        <span class="sec-rule"></span>
+      </div>
+      <div class="renderer-grid">
+        <div class="r-left">
+          <label class="field-lbl">LaTeX Expression</label>
+          <textarea id="latex-input" class="latex-ta" spellcheck="false"
+            placeholder="$$\int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}$$"></textarea>
+          <div class="r-actions">
+            <button class="btn-primary" id="btn-render">
+              <span>Render</span><span class="btn-arr">→</span>
+            </button>
+            <button class="btn-ghost" id="btn-clear">Clear</button>
+            <button class="btn-ghost" id="btn-example">Example</button>
+          </div>
+        </div>
+        <div class="r-right">
+          <span class="field-lbl">Rendered Output</span>
+          <div id="math-output" class="math-output">
+            <div class="out-empty">
+              <span class="empty-sym">∅</span>
+              <span>Enter an expression and click Render</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 · POSTS -->
+    <section class="section reveal" id="section-posts">
+      <div class="sec-head">
+        <span class="sec-num">02</span>
+        <h2 class="sec-title" id="posts-title">Mathematics Posts</h2>
+        <span class="sec-rule"></span>
+      </div>
+      <div id="posts-empty" class="posts-empty" style="display:none;">
+        <span class="posts-empty-sym">◇</span>
+        <p>No posts yet in this section.</p>
+      </div>
+      <div class="posts-grid" id="posts-grid"></div>
+    </section>
+
+    <!-- 03 · FORMULA LIBRARY -->
+    <section class="section reveal" id="section-library">
+      <div class="sec-head">
+        <span class="sec-num">03</span>
+        <h2 class="sec-title" id="lib-title">Formula Library</h2>
+        <span class="sec-rule"></span>
+      </div>
+      <div class="filter-bar"   id="filter-bar"></div>
+      <div class="formula-grid" id="formula-grid"></div>
+    </section>
+
+    <!-- 04 · PHYSICAL CONSTANTS (physics only) -->
+    <section class="section reveal" id="section-constants" style="display:none;">
+      <div class="sec-head">
+        <span class="sec-num">04</span>
+        <h2 class="sec-title">Physical Constants</h2>
+        <span class="sec-rule"></span>
+      </div>
+      <div class="constants-grid" id="constants-grid"></div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="f-gem">◆</span>
+        <span class="f-name">CRADLES</span>
+        <span class="f-gem">◆</span>
+      </div>
+      <p class="footer-tag">In pursuit of the absolute</p>
+      <div class="footer-rule"></div>
+      <p class="footer-copy">Built for the relentless pursuit of knowledge</p>
+    </div>
+  </footer>
+
+  <!--
+  ═══════════════════════════════════════════════════════════════
+  POSTS — add your post scripts here
+  ───────────────────────────────────────────────────────────────
+  To publish a new post:
+    1. Create a file in the posts/ folder  (e.g. posts/math-riemann.js)
+    2. Copy an existing post file as a template and fill it in
+    3. Add ONE line below:  <script src="posts/math-riemann.js"></script>
+    4. git add . && git commit -m "new post" && git push
+
+  Posts render newest-first — append new lines at the bottom.
+  ═══════════════════════════════════════════════════════════════
+  -->
+  <script src="posts.js"></script>
+
   <script src="posts/math-euler-identity.js"></script>
   <script src="posts/physics-schrodinger-equation.js"></script>
 
