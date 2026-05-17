@@ -27,13 +27,11 @@ window.registerPost = function (post) {
    Add the path to each post file here.
    Posts render newest-first — append new posts at the bottom.
    ─────────────────────────────────────────────────────────── */
-var POST_MANIFEST = [
 
-  'posts/math-riemann.js',
-
-];
 window.POST_MANIFEST = [
-  'posts/math-riemann.js',   // ← just add this
+  'posts/math-euler-identity.js',
+  'posts/physics-schrodinger-equation.js',
+  'posts/math-riemann-hypothesis.js',   // ← your new post
 ];
 /* ── Loader (do not edit) ────────────────────────────────────
    Injects each post file as a synchronous <script> tag during
