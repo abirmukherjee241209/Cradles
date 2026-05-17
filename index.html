@@ -8,23 +8,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;1,200&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- MathJax Configuration -->
   <script>
     MathJax = {
       tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        inlineMath:  [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
       },
       options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] },
       startup: { typeset: false }
     };
   </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
-<body class="mode-math" data-mode="math">
+<body data-mode="math">
 
-  <!-- ═══ LOADER ═══ -->
+  <!-- LOADER -->
   <div id="loader">
     <div class="loader-inner">
       <div class="loader-title">CRADLES</div>
@@ -33,88 +32,81 @@
     </div>
   </div>
 
-  <!-- ═══ MODE TRANSITION OVERLAY ═══ -->
+  <!-- MODE FLASH OVERLAY -->
   <div id="mode-overlay"></div>
 
-  <!-- ═══ BACKGROUND CANVAS ═══ -->
+  <!-- BACKGROUND CANVAS -->
   <canvas id="bg-canvas"></canvas>
 
-  <!-- ═══ NAVIGATION ═══ -->
+  <!-- NAVBAR -->
   <nav id="navbar">
     <div class="nav-brand">
-      <span class="brand-mark">◆</span>
+      <span class="brand-gem">◆</span>
       <span class="brand-name">CRADLES</span>
     </div>
-
     <div class="mode-toggle-wrap">
       <button class="mode-btn active" data-mode="math" id="btn-math">
-        <span class="mode-symbol">∑</span>
-        <span class="mode-label">Mathematics</span>
+        <span class="mode-sym">∑</span>
+        <span class="mode-lbl">Mathematics</span>
       </button>
       <span class="toggle-sep"></span>
       <button class="mode-btn" data-mode="physics" id="btn-physics">
-        <span class="mode-symbol">⚛</span>
-        <span class="mode-label">Physics</span>
+        <span class="mode-sym">⚛</span>
+        <span class="mode-lbl">Physics</span>
       </button>
     </div>
-
-    <div class="nav-rule"></div>
+    <div class="nav-ornament"></div>
   </nav>
 
-  <!-- ═══ HERO ═══ -->
+  <!-- HERO -->
   <section id="hero">
-    <div class="hero-bg-text" id="hero-bg-text" aria-hidden="true"></div>
+    <div class="hero-bg-word" id="hero-bg-word" aria-hidden="true"></div>
     <div class="hero-content">
       <p class="hero-eyebrow" id="hero-eyebrow">The Discipline of</p>
-      <h1 class="hero-title" id="hero-title">Mathematics</h1>
-      <p class="hero-desc" id="hero-desc">
-        Where precision meets elegance — render, explore, and understand<br />the language of the universe.
+      <h1 class="hero-title"  id="hero-title">Mathematics</h1>
+      <p class="hero-desc"    id="hero-desc">
+        Where precision meets elegance — explore the language of the universe.
       </p>
-      <div class="hero-ornament">
+      <div class="hero-orn">
         <span class="orn-line"></span>
         <span class="orn-gem">◆</span>
-        <span class="orn-line"></span>
+        <span class="orn-line r"></span>
       </div>
       <a href="#section-renderer" class="hero-cta">
-        Begin Exploring
-        <span class="cta-arrow">↓</span>
+        Begin Exploring <span class="cta-dn">↓</span>
       </a>
     </div>
-    <div class="floating-symbols" id="floating-symbols" aria-hidden="true"></div>
+    <div class="float-wrap" id="float-wrap" aria-hidden="true"></div>
   </section>
 
-  <!-- ═══ MAIN CONTENT ═══ -->
+  <!-- MAIN -->
   <main>
 
-    <!-- ─── 01 · FORMULA RENDERER ─── -->
+    <!-- 01 · RENDERER -->
     <section class="section reveal" id="section-renderer">
-      <div class="section-head">
-        <div class="section-num">01</div>
-        <h2 class="section-title">Formula Renderer</h2>
-        <div class="section-rule"></div>
+      <div class="sec-head">
+        <span class="sec-num">01</span>
+        <h2 class="sec-title">Formula Renderer</h2>
+        <span class="sec-rule"></span>
       </div>
-
       <div class="renderer-grid">
-        <div class="renderer-left">
-          <label class="field-label">LaTeX Expression</label>
-          <textarea id="latex-input" class="latex-textarea"
-            placeholder="$$\int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}$$"
-            spellcheck="false"></textarea>
-          <div class="renderer-actions">
+        <div class="r-left">
+          <label class="field-lbl">LaTeX Expression</label>
+          <textarea id="latex-input" class="latex-ta" spellcheck="false"
+            placeholder="$$\int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}$$"></textarea>
+          <div class="r-actions">
             <button class="btn-primary" id="btn-render">
-              <span>Render</span>
-              <span class="btn-icon">→</span>
+              <span>Render</span><span class="btn-arr">→</span>
             </button>
             <button class="btn-ghost" id="btn-clear">Clear</button>
-            <button class="btn-ghost" id="btn-example">Insert Example</button>
+            <button class="btn-ghost" id="btn-example">Example</button>
           </div>
         </div>
-
-        <div class="renderer-right">
-          <div class="field-label">Rendered Output</div>
+        <div class="r-right">
+          <span class="field-lbl">Rendered Output</span>
           <div id="math-output" class="math-output">
-            <div class="output-empty">
-              <span class="empty-icon">∅</span>
+            <div class="out-empty">
+              <span class="empty-sym">∅</span>
               <span>Enter an expression and click Render</span>
             </div>
           </div>
@@ -122,94 +114,59 @@
       </div>
     </section>
 
-    <!-- ─── 02 · FORMULA LIBRARY ─── -->
-    <section class="section reveal" id="section-library">
-      <div class="section-head">
-        <div class="section-num">02</div>
-        <h2 class="section-title" id="library-title">Formula Library</h2>
-        <div class="section-rule"></div>
+    <!-- 02 · POSTS -->
+    <section class="section reveal" id="section-posts">
+      <div class="sec-head">
+        <span class="sec-num">02</span>
+        <h2 class="sec-title" id="posts-title">Mathematics Posts</h2>
+        <span class="sec-rule"></span>
       </div>
+      <div id="posts-empty" class="posts-empty" style="display:none;">
+        <span class="posts-empty-sym">◇</span>
+        <p>No posts yet in this section.</p>
+      </div>
+      <div class="posts-grid" id="posts-grid"></div>
+    </section>
 
-      <div class="filter-bar" id="filter-bar"></div>
+    <!-- 03 · FORMULA LIBRARY -->
+    <section class="section reveal" id="section-library">
+      <div class="sec-head">
+        <span class="sec-num">03</span>
+        <h2 class="sec-title" id="lib-title">Formula Library</h2>
+        <span class="sec-rule"></span>
+      </div>
+      <div class="filter-bar"   id="filter-bar"></div>
       <div class="formula-grid" id="formula-grid"></div>
     </section>
 
-    <!-- ─── 03 · PHYSICAL CONSTANTS (physics only) ─── -->
-    <section class="section reveal physics-only" id="section-constants" style="display:none;">
-      <div class="section-head">
-        <div class="section-num">03</div>
-        <h2 class="section-title">Physical Constants</h2>
-        <div class="section-rule"></div>
+    <!-- 04 · PHYSICAL CONSTANTS (physics only) -->
+    <section class="section reveal" id="section-constants" style="display:none;">
+      <div class="sec-head">
+        <span class="sec-num">04</span>
+        <h2 class="sec-title">Physical Constants</h2>
+        <span class="sec-rule"></span>
       </div>
       <div class="constants-grid" id="constants-grid"></div>
     </section>
 
-    <!-- ─── 04 · PDF UPLOAD ─── -->
-    <section class="section reveal" id="section-pdf">
-      <div class="section-head">
-        <div class="section-num" id="pdf-section-num">03</div>
-        <h2 class="section-title">Document Analysis</h2>
-        <div class="section-rule"></div>
-      </div>
-
-      <div id="upload-zone" class="upload-zone">
-        <div class="upload-ring">
-          <span class="upload-arrow">↑</span>
-        </div>
-        <div class="upload-copy">
-          <p class="upload-title">Upload PDF Document</p>
-          <p class="upload-hint">Drop your paper here, or click to browse</p>
-          <p class="upload-meta">Mathematical &amp; physics papers · LaTeX rendered automatically</p>
-        </div>
-        <input type="file" id="pdf-file-input" accept=".pdf" hidden />
-      </div>
-
-      <div id="pdf-result" class="pdf-result" style="display:none;">
-        <div class="pdf-result-header">
-          <div class="pdf-result-name" id="pdf-result-name">Document.pdf</div>
-          <div class="pdf-result-meta" id="pdf-result-meta"></div>
-          <button class="btn-ghost small" id="pdf-reset">✕ Close</button>
-        </div>
-        <div class="pdf-tabs">
-          <button class="pdf-tab active" data-tab="pages">Pages</button>
-          <button class="pdf-tab" data-tab="text">Extracted Text</button>
-        </div>
-        <div class="pdf-tab-content" id="pdf-tab-pages">
-          <div class="pdf-pages-wrap" id="pdf-pages-wrap"></div>
-        </div>
-        <div class="pdf-tab-content" id="pdf-tab-text" style="display:none;">
-          <div class="pdf-text-content" id="pdf-text-content"></div>
-        </div>
-      </div>
-    </section>
-
   </main>
-<!-- ─── 05 · POSTS ─── -->
-<section class="section reveal" id="section-posts">
-  <div class="section-head">
-    <div class="section-num">05</div>
-    <h2 class="section-title">Posts</h2>
-    <div class="section-rule"></div>
-  </div>
 
-  <div class="posts-grid" id="posts-grid"></div>
-</section>
-  <!-- ═══ FOOTER ═══ -->
+  <!-- FOOTER -->
   <footer id="footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <span class="footer-gem">◆</span>
-        <span class="footer-name">CRADLES</span>
-        <span class="footer-gem">◆</span>
+        <span class="f-gem">◆</span>
+        <span class="f-name">CRADLES</span>
+        <span class="f-gem">◆</span>
       </div>
-      <p class="footer-tagline">In pursuit of the absolute</p>
+      <p class="footer-tag">In pursuit of the absolute</p>
       <div class="footer-rule"></div>
       <p class="footer-copy">Built for the relentless pursuit of knowledge</p>
     </div>
   </footer>
 
-  <!-- PDF.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <!-- posts.js must load before script.js -->
+  <script src="posts.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

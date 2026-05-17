@@ -1,60 +1,107 @@
-# CRADLES — Mathematical & Physical Sciences
+# CRADLES
 
-A luxury black-and-gold knowledge platform for mathematics and physics.
-
-## Features
-
-- **Two Modes** — Mathematics & Physics with animated transitions
-- **Formula Renderer** — Type any LaTeX and render it live with MathJax
-- **Formula Library** — Curated, categorised equations for both disciplines
-- **Physical Constants** — Reference panel for fundamental constants (Physics mode)
-- **PDF Analysis** — Upload PDFs: pages rendered visually, text extracted, LaTeX typeset automatically
-- **Animated Background** — Particle constellation canvas with geometric grid
-- **Floating Symbols** — Mode-specific Greek/mathematical symbols drift through the hero
-- **Scroll Reveal** — Sections animate in as you scroll
-
-## Stack
-
-- Vanilla HTML / CSS / JavaScript (zero build step)
-- [MathJax 3](https://www.mathjax.org/) — LaTeX rendering
-- [PDF.js](https://mozilla.github.io/pdf.js/) — PDF rendering & text extraction
-- [Google Fonts](https://fonts.google.com/) — Cinzel · Cormorant Garamond · Crimson Pro
-- [Vercel](https://vercel.com/) — Static hosting
-
-## Deploy to Vercel
-
-### Option A — Vercel CLI
-```bash
-npm i -g vercel
-vercel
-```
-
-### Option B — Vercel Dashboard
-1. Push this folder to a GitHub repository
-2. Go to [vercel.com](https://vercel.com) → New Project
-3. Import your repo — Vercel auto-detects it as a static site
-4. Click **Deploy** — done ✦
-
-### Option C — Drag & Drop
-1. Zip the four project files
-2. Go to [vercel.com/new](https://vercel.com/new)
-3. Drag the zip onto the dashboard
-
-## Project Structure
-
-```
-cradles/
-├── index.html     # Structure & layout
-├── styles.css     # Full design system
-├── script.js      # All interactivity & data
-├── vercel.json    # Deployment config
-└── README.md
-```
-
-## Keyboard Shortcut
-
-Inside the Formula Renderer: **Ctrl + Enter** renders the current expression.
+Mathematical & Physical Sciences — a static knowledge platform.
 
 ---
 
-*Built with intention. In pursuit of the absolute.*
+## How to publish a new post
+
+### Step 1 — Create the post file
+
+Add a `.js` file anywhere inside the `posts/` folder.
+Name it whatever you like, descriptively:
+
+```
+posts/math-riemann-hypothesis.js
+posts/physics-general-relativity.js
+```
+
+Write it using the `registerPost()` call:
+
+```js
+registerPost({
+  mode:     'math',           // 'math' or 'physics'
+  title:    'Your Title Here',
+  category: 'analysis',       // see categories below
+  date:     '18 May 2026',    // displayed as-is
+  body: `
+    Your prose here. Full LaTeX is supported.
+
+    Inline math uses single dollar signs: $E = mc^2$
+
+    Display math uses double dollar signs, on its own paragraph:
+
+    $$\int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}$$
+
+    Blank lines between paragraphs become paragraph breaks.
+    That's all — no HTML needed.
+  `
+});
+```
+
+**Math categories:** `calculus` · `algebra` · `trig` · `linalg` · `analysis`
+
+**Physics categories:** `classical` · `em` · `thermo` · `quantum` · `relativity`
+
+---
+
+### Step 2 — Register it in posts.js
+
+Open `posts.js` and add the file path to `POST_MANIFEST`:
+
+```js
+window.POST_MANIFEST = [
+  'posts/math-euler-identity.js',
+  'posts/physics-schrodinger-equation.js',
+  'posts/math-riemann-hypothesis.js',   // ← your new post
+];
+```
+
+Posts render **newest-first** — the last entry in the manifest
+appears at the top of the page, so append new posts to the bottom.
+
+---
+
+### Step 3 — Push to GitHub
+
+```bash
+git add .
+git commit -m "add post: Riemann Hypothesis"
+git push
+```
+
+GitHub Pages rebuilds in ~30 seconds and your post is live.
+
+---
+
+## File structure
+
+```
+cradles/
+├── index.html          ← page structure (never needs editing)
+├── styles.css          ← design system (never needs editing)
+├── script.js           ← application logic (never needs editing)
+├── posts.js            ← manifest — edit this to register posts
+├── vercel.json
+├── README.md
+└── posts/
+    ├── math-euler-identity.js          ← example math post
+    ├── physics-schrodinger-equation.js ← example physics post
+    └── your-post-here.js               ← your posts go here
+```
+
+The only two files you ever touch are:
+- **`posts.js`** — add one line to the manifest
+- **`posts/your-new-post.js`** — write your content
+
+---
+
+## Deploy
+
+**GitHub Pages** — push to `main`, enable Pages in Settings → Pages → `main / root`
+
+**Vercel** — `vercel` in the project folder, or drag onto vercel.com/new
+
+---
+
+*In pursuit of the absolute.*
