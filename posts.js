@@ -29,7 +29,7 @@ window.registerPost = function (post) {
    ─────────────────────────────────────────────────────────── */
 window.POST_MANIFEST = [
 
-  'posts/math-euler-identity.js',
+  'posts/math-riemann.js.js',
   'posts/physics-schrodinger-equation.js',
 
 ];
