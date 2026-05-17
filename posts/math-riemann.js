@@ -9,22 +9,4 @@ registerPost({
 
     $$\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}$$
   `
-});        and signal processing.
-      </p>
-
-    </article>
-
-  </main>
-
-  <footer id="footer">
-    <div class="footer-inner">
-      <p class="footer-copy">
-        Built for the relentless pursuit of knowledge
-      </p>
-    </div>
-  </footer>
-
-  <script src="../script.js"></script>
-
-</body>
-</html>
+});
