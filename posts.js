@@ -24,20 +24,32 @@ window.registerPost = function (post) {
 };
 
 /* ── MANIFEST ────────────────────────────────────────────────
-   Add the path to each post file here.
+   Add the path to each new post file here.
    Posts render newest-first — append new posts at the bottom.
    ─────────────────────────────────────────────────────────── */
+var POST_MANIFEST = [
 
-window.POST_MANIFEST = [
-  'posts/math-euler-identity.js',
+  'posts/math-riemman.js',
   'posts/physics-schrodinger-equation.js',
-  'posts/math-riemann-hypothesis.js',   // ← your new post
+
 ];
+
 /* ── Loader (do not edit) ────────────────────────────────────
-   Injects each post file as a synchronous <script> tag during
-   the page parse, so all posts are registered before script.js
-   ever runs. Works on GitHub Pages and local file:// alike.
+   Starts fetching every post file immediately and stores a
+   Promise that resolves once all of them have loaded.
+   script.js waits on window.CradlesPostsReady before rendering.
    ─────────────────────────────────────────────────────────── */
-POST_MANIFEST.forEach(function (src) {
-  document.write('<script src="' + src + '"><\/script>');
-});
+window.CradlesPostsReady = Promise.all(
+  POST_MANIFEST.map(function (src) {
+    return new Promise(function (resolve) {
+      var s = document.createElement('script');
+      s.src = src;
+      s.onload  = resolve;
+      s.onerror = function () {
+        console.warn('CRADLES: could not load post file "' + src + '"');
+        resolve();
+      };
+      document.head.appendChild(s);
+    });
+  })
+);
