@@ -165,8 +165,25 @@
     </div>
   </footer>
 
-  <!-- posts.js must load before script.js -->
+  <!--
+  ═══════════════════════════════════════════════════════════════
+  POSTS — add your post scripts here
+  ───────────────────────────────────────────────────────────────
+  To publish a new post:
+    1. Create a file in the posts/ folder  (e.g. posts/math-riemann.js)
+    2. Copy an existing post file as a template and fill it in
+    3. Add ONE line below:  <script src="posts/math-riemann.js"></script>
+    4. git add . && git commit -m "new post" && git push
+
+  Posts render newest-first — append new lines at the bottom.
+  ═══════════════════════════════════════════════════════════════
+  -->
   <script src="posts.js"></script>
+
+  <script src="posts/math-euler-identity.js"></script>
+  <script src="posts/physics-schrodinger-equation.js"></script>
+
+  <!-- ↑ ADD NEW POST SCRIPTS ABOVE THIS LINE -->
   <script src="script.js"></script>
 </body>
 </html>
